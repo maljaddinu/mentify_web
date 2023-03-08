@@ -8,6 +8,7 @@
         "php": "^8.0",
         "fruitcake/laravel-cors": "^2.0.5",
         "guzzlehttp/guzzle": "^7.2",
+        "inertiajs/inertia-laravel": "^0.6.9",
         "laravel/framework": "^9.0",
         "laravel/sanctum": "^2.14",
         "laravel/tinker": "^2.7"
@@ -55,7 +56,8 @@
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true
+        "sort-packages": true,
+        "disable-tls": true
     },
     "minimum-stability": "dev",
     "prefer-stable": true
