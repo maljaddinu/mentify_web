@@ -22,3 +22,5 @@ use App\Http\Controllers\MainPageController;
 Route::get('/',[MainPageController::class,'index']);
 Route::get('/get-comment',[MainPageController::class,'getComment']);
 Route::get('/get-webinar',[MainPageController::class,'getWebinar']);
+Route::get('/search-webinar',[MainPageController::class,'searchWebinar']);
+Route::get('/search-category-webinar',[MainPageController::class,'searcCategoryhWebinar']);

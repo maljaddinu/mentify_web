@@ -18,6 +18,10 @@ return new class extends Migration
             $table->id();
             $table->text('webinars_name');
             $table->text('webinars_category');
+            $table->text('webinars_level');
+            $table->integer('webinars_quota');
+            $table->integer('webinars_booked');
+            $table->date('webinars_end_registration');
             $table->timestamps();
         });
 

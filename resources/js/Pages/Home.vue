@@ -12,7 +12,7 @@
         <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
           <ul class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700 items-center">
             <li>
-                <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex items-center justify-between w-full py-2 pl-3 pr-4 font-medium text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">
+                <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex items-center justify-between w-full py-2 pl-3 pr-4 font-medium text-mentifyOrange rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">
                     Kelas
                     <svg class="w-5 h-5 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button>
                 <!-- Dropdown menu -->
@@ -110,7 +110,7 @@
         </div>
     </nav>
 </div>   
-<div class="container mx-auto overflow-y-auto mt-56 px-36 space-y-32">
+<div class="container mx-auto overflow-y-auto mt-56 px-36 space-y-28">
     <section class="flex flex-row justify-between items-center w-full">
         <div class="w-2/5">
             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Online Workshop</h5>
@@ -120,7 +120,7 @@
             </a>
         </div>
         <div class="w-3/5">
-            <img class="h-auto max-w-full" src="/image-1@2x.jpg" alt="image description">
+            <img class="h-auto max-w-full" src="/image-2@1x.jpg" alt="image description">
         </div>
     </section>
     <section class="space-y-8">
@@ -133,15 +133,12 @@
                 </a>
             </div>
             <div class="w-1/2">
-                <form class="flex items-center">   
+                <form class="flex flex-row-reverse">   
                     <label for="voice-search" class="sr-only">Search</label>
-                    <div class="relative w-full">
-                        <div class="absolute inset-y-0 right-0 flex items-center pl-3 pointer-events-none">
-                            <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
-                        </div>
-                        <input type="text" id="voice-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Mockups, Logos, Design Templates..." required>
+                    <div class="relative w-96">
+                        <input type="text" v-model="searchCategory" id="voice-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search..." required>
                         <button type="button" class="absolute inset-y-0 right-0 flex items-center pr-3">
-                            <svg aria-hidden="true" class="w-4 h-4 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0A5 5 0 015 8a1 1 0 00-2 0 7.001 7.001 0 006 6.93V17H6a1 1 0 100 2h8a1 1 0 100-2h-3v-2.07z" clip-rule="evenodd"></path></svg>
+                            <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
                         </button>
                     </div>
                 </form>
@@ -152,97 +149,104 @@
         </div>
         <div>
             <div class="flex items-center h-full space-x-2">
-                <button type="button" class="text-gray-400 bg-gray-50 focus:outline-none hover:bg-mentifyTheme hover:border-mentifyTheme-200 hover:text-white focus:ring-4 focus:ring-gray-200 font-large rounded-lg text-sm px-4 py-3.5">Mentify Bootcamp</button>
-                <button type="button" class="text-gray-400 bg-gray-50 focus:outline-none hover:bg-mentifyTheme hover:border-mentifyTheme-200 hover:text-white focus:ring-4 focus:ring-gray-200 font-large rounded-lg text-sm px-4 py-3.5">Mentify Life</button>
-                <button type="button" class="text-gray-400 bg-gray-50 focus:outline-none hover:bg-mentifyTheme hover:border-mentifyTheme-200 hover:text-white focus:ring-4 focus:ring-gray-200 font-large rounded-lg text-sm px-4 py-3.5">Online Workshop</button>
-                <button type="button" class="text-gray-400 bg-gray-50 focus:outline-none hover:bg-mentifyTheme hover:border-mentifyTheme-200 hover:text-white focus:ring-4 focus:ring-gray-200 font-large rounded-lg text-sm px-4 py-3.5">Webinar</button>
+                <button @click="getCategory(item.webinars_category)" v-for="item in $page['props']['webinarCategory']" type="button" class="text-gray-400 bg-gray-50 focus:outline-none hover:bg-mentifyTheme hover:border-mentifyTheme-200 hover:text-white focus:ring-4 focus:ring-gray-200 font-large rounded-lg text-sm px-4 py-3.5">
+                    {{ item.webinars_category }}
+                </button>
             </div>
         </div>
-        <div class="flex flex-row justify-around">
-            <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                <svg class="w-10 h-10 mb-2 text-gray-500 dark:text-gray-400" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5 5a3 3 0 015-2.236A3 3 0 0114.83 6H16a2 2 0 110 4h-5V9a1 1 0 10-2 0v1H4a2 2 0 110-4h1.17C5.06 5.687 5 5.35 5 5zm4 1V5a1 1 0 10-1 1h1zm3 0a1 1 0 10-1-1v1h1z" clip-rule="evenodd"></path><path d="M9 11H3v5a2 2 0 002 2h4v-7zM11 18h4a2 2 0 002-2v-5h-6v7z"></path></svg>
-                <a href="#">
-                    <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">Need a help in Claim?</h5>
-                </a>
-                <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">Go to this step by step guideline process on how to certify for your weekly benefits:</p>
-                <a href="#" class="inline-flex items-center text-blue-600 hover:underline">
-                    See our guideline
-                    <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path></svg>
-                </a>
-            </div>
-            <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                <svg class="w-10 h-10 mb-2 text-gray-500 dark:text-gray-400" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5 5a3 3 0 015-2.236A3 3 0 0114.83 6H16a2 2 0 110 4h-5V9a1 1 0 10-2 0v1H4a2 2 0 110-4h1.17C5.06 5.687 5 5.35 5 5zm4 1V5a1 1 0 10-1 1h1zm3 0a1 1 0 10-1-1v1h1z" clip-rule="evenodd"></path><path d="M9 11H3v5a2 2 0 002 2h4v-7zM11 18h4a2 2 0 002-2v-5h-6v7z"></path></svg>
-                <a href="#">
-                    <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">Need a help in Claim?</h5>
-                </a>
-                <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">Go to this step by step guideline process on how to certify for your weekly benefits:</p>
-                <a href="#" class="inline-flex items-center text-blue-600 hover:underline">
-                    See our guideline
-                    <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path></svg>
-                </a>
-            </div>
-            <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                <svg class="w-10 h-10 mb-2 text-gray-500 dark:text-gray-400" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5 5a3 3 0 015-2.236A3 3 0 0114.83 6H16a2 2 0 110 4h-5V9a1 1 0 10-2 0v1H4a2 2 0 110-4h1.17C5.06 5.687 5 5.35 5 5zm4 1V5a1 1 0 10-1 1h1zm3 0a1 1 0 10-1-1v1h1z" clip-rule="evenodd"></path><path d="M9 11H3v5a2 2 0 002 2h4v-7zM11 18h4a2 2 0 002-2v-5h-6v7z"></path></svg>
-                <a href="#">
-                    <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">Need a help in Claim?</h5>
-                </a>
-                <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">Go to this step by step guideline process on how to certify for your weekly benefits:</p>
-                <a href="#" class="inline-flex items-center text-blue-600 hover:underline">
-                    See our guideline
-                    <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path></svg>
-                </a>
+        <div class="grid grid-cols-3 gap-4">
+            <div v-for="(item, index) in webinarData" class="relative max-w-md bg-white border border-gray-200 rounded-lg drop-shadow-xl dark:bg-gray-800 dark:border-gray-70">
+                <div class="bg-mentifyTheme rounded-tl-lg rounded-tr-lg" :style="index % 2 == 0 ? '' : 'background-image: url(/profile-picture-5.jpg)'">
+                    <div class="px-4 pt-4 pb-10 space-y-4">
+                        <img src="/mentify_logo.png" class="h-8" alt="Mentify Logo" />
+                        <h5 class="text-xl font-semibold tracking-tight text-white">{{ item.webinars_name }}</h5>
+                    </div> 
+                </div>
+                <div class="absolute top-28 flex items-center justify-between w-full px-4 ">
+                    <div class="flex -space-x-2">
+                            <img class="w-10 h-10 rounded-full dark:border-gray-800" src="/profile-picture-5.jpg" alt="">
+                            <img class="w-10 h-10 rounded-full dark:border-gray-800" src="/profile-picture-5.jpg" alt="">
+                            <img class="w-10 h-10 rounded-full dark:border-gray-800" src="/profile-picture-5.jpg" alt="">
+                    </div>
+                    <div class="bg-blue-700 max-w-max text-white text-center h-8 px-6 flex items-center rounded-full font-medium">{{ item.webinars_level }}</div>
+                </div>
+                <div class="p-5 space-y-4">
+                    <div class="text-gray-600">
+                        <span class="font-medium">Mentor </span><br>
+                        Evan Gilang, Annisa Nur, Evira Tiffany
+                    </div>
+                    <!-- element jika sudah tutup -->
+                    <div class="relative pb-8" v-if="item.webinars_quota == item.webinars_booked">
+                        <div class="mb-1 text-md font-bold text-mentifyTheme">Workshop Penuh</div>
+                        <div class="w-full h-4 mb-4 bg-gray-200 rounded-full dark:bg-gray-700">
+                            <div class="h-4 bg-mentifyTheme rounded-full" style="width: 100%"></div>
+                        </div>
+                        <div class="absolute top-12 text-gray-600 text-sm">
+                            Sayang banget, workshop ini udah penuh kuotanya. 
+                        </div>
+                    </div>
+                    <div v-else class="relative pb-8">
+                        <div v-if="(item.webinars_booked / item.webinars_quota) * 100 > 80" class="mb-1 text-md font-bold text-mentifyOrange">Kuota Terbatas Akan Segera Habis</div>
+                        <div v-else class="mb-1 text-md font-bold text-mentifyOrange">Kuota Masih Tersedia</div>
+                        <div class="w-full h-4 mb-4 bg-gray-200 rounded-full dark:bg-gray-700">
+                            <div class="h-4 bg-gradient-to-r from-amber-300 to-mentifyOrange rounded-full" :style="'width:'+(item.webinars_booked / item.webinars_quota) * 100 +'%'"></div>
+                        </div>
+                        <div class="absolute top-12 text-gray-600 text-sm">
+                            Pendaftaran akan tutup dalam <span class="font-bold"> {{ item.webinars_end_registration }}</span> 
+                        </div>
+                    </div>
+                    <button v-if="item.webinars_quota == item.webinars_booked" type="button" class="w-full text-mentifyTheme bg-gray-50 focus:outline-none hover:bg-mentifyTheme hover:border-mentifyTheme-200 hover:text-white focus:ring-4 focus:ring-gray-200 font-large rounded-lg text-sm px-4 py-3.5">
+                        Lihat silabus yang diberikan diworkshop ini
+                    </button>
+                     <button v-else type="button" class="w-full text-black font-bold bg-mentifyOrange font-large rounded-lg text-sm px-4 py-3.5">
+                        Pelajari Workhsop Lebih Lanjut
+                    </button>
+                </div>
             </div>
         </div>
     </section>
     <section class="flex flex-col">
-        <div>
+        <div class="w-1/2 text-center mx-auto">
             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">4 Keuntungan dari Workshop Mentify</h5>
             <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Workshop di mentify menawarkan berbagai keuntungan dibanding platform belajar lain, berikut beberapa keuntungan yang akan kamu dapatkan</p>
         </div>    
-        <div class="flex flex-row">
-            <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                <svg class="w-10 h-10 mb-2 text-gray-500 dark:text-gray-400" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5 5a3 3 0 015-2.236A3 3 0 0114.83 6H16a2 2 0 110 4h-5V9a1 1 0 10-2 0v1H4a2 2 0 110-4h1.17C5.06 5.687 5 5.35 5 5zm4 1V5a1 1 0 10-1 1h1zm3 0a1 1 0 10-1-1v1h1z" clip-rule="evenodd"></path><path d="M9 11H3v5a2 2 0 002 2h4v-7zM11 18h4a2 2 0 002-2v-5h-6v7z"></path></svg>
-                <a href="#">
-                    <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">Need a help in Claim?</h5>
-                </a>
-                <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">Go to this step by step guideline process on how to certify for your weekly benefits:</p>
-                <a href="#" class="inline-flex items-center text-blue-600 hover:underline">
-                    See our guideline
-                    <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path></svg>
-                </a>
+        <div class="grid grid-cols-4 gap-4">
+            <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg drop-shadow-xl dark:bg-gray-800 dark:border-gray-700">
+                <div class="flex items-center">
+                    <svg class="w-10 h-10 text-mentifyTheme" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z"></path>
+                    </svg>
+                    <h5 class="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Recording Class</h5>
+                </div>
+                <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">Kamu akan mendapatkan recording class agar kamu dapat mengingat kembali materi dan diskusi yang terjadi di workshop kamu. </p>
             </div>
-            <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                <svg class="w-10 h-10 mb-2 text-gray-500 dark:text-gray-400" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5 5a3 3 0 015-2.236A3 3 0 0114.83 6H16a2 2 0 110 4h-5V9a1 1 0 10-2 0v1H4a2 2 0 110-4h1.17C5.06 5.687 5 5.35 5 5zm4 1V5a1 1 0 10-1 1h1zm3 0a1 1 0 10-1-1v1h1z" clip-rule="evenodd"></path><path d="M9 11H3v5a2 2 0 002 2h4v-7zM11 18h4a2 2 0 002-2v-5h-6v7z"></path></svg>
-                <a href="#">
-                    <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">Need a help in Claim?</h5>
-                </a>
-                <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">Go to this step by step guideline process on how to certify for your weekly benefits:</p>
-                <a href="#" class="inline-flex items-center text-blue-600 hover:underline">
-                    See our guideline
-                    <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path></svg>
-                </a>
+            <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg drop-shadow-xl dark:bg-gray-800 dark:border-gray-700">
+                <div class="flex items-center">
+                    <svg class="w-10 h-10 text-mentifyTheme" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 002.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 012.916.52 6.003 6.003 0 01-5.395 4.972m0 0a6.726 6.726 0 01-2.749 1.35m0 0a6.772 6.772 0 01-3.044 0"></path>
+                    </svg>
+                    <h5 class="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">e-certificate</h5>
+                </div>
+                <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">Workshop yang kamu ikuti akan memberikan e-certifikat yang dapat kamu publikiasikan ke portofolio maupun sosial media kamu.   </p>
             </div>
-            <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                <svg class="w-10 h-10 mb-2 text-gray-500 dark:text-gray-400" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5 5a3 3 0 015-2.236A3 3 0 0114.83 6H16a2 2 0 110 4h-5V9a1 1 0 10-2 0v1H4a2 2 0 110-4h1.17C5.06 5.687 5 5.35 5 5zm4 1V5a1 1 0 10-1 1h1zm3 0a1 1 0 10-1-1v1h1z" clip-rule="evenodd"></path><path d="M9 11H3v5a2 2 0 002 2h4v-7zM11 18h4a2 2 0 002-2v-5h-6v7z"></path></svg>
-                <a href="#">
-                    <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">Need a help in Claim?</h5>
-                </a>
-                <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">Go to this step by step guideline process on how to certify for your weekly benefits:</p>
-                <a href="#" class="inline-flex items-center text-blue-600 hover:underline">
-                    See our guideline
-                    <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path></svg>
-                </a>
+            <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg drop-shadow-xl dark:bg-gray-800 dark:border-gray-700">
+                <div class="flex items-center">
+                    <svg class="w-10 h-10 text-mentifyTheme" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"></path>
+                    </svg>
+                    <h5 class="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Materi Workshop</h5>
+                </div>
+                <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">Materi Workshop dalam bentuk PPT / PDF akan kami berikan agar kamu dfapat kembali mempelajari materi lebih lanjut.    </p>
             </div>
-            <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                <svg class="w-10 h-10 mb-2 text-gray-500 dark:text-gray-400" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5 5a3 3 0 015-2.236A3 3 0 0114.83 6H16a2 2 0 110 4h-5V9a1 1 0 10-2 0v1H4a2 2 0 110-4h1.17C5.06 5.687 5 5.35 5 5zm4 1V5a1 1 0 10-1 1h1zm3 0a1 1 0 10-1-1v1h1z" clip-rule="evenodd"></path><path d="M9 11H3v5a2 2 0 002 2h4v-7zM11 18h4a2 2 0 002-2v-5h-6v7z"></path></svg>
-                <a href="#">
-                    <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">Need a help in Claim?</h5>
-                </a>
-                <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">Go to this step by step guideline process on how to certify for your weekly benefits:</p>
-                <a href="#" class="inline-flex items-center text-blue-600 hover:underline">
-                    See our guideline
-                    <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path></svg>
-                </a>
+            <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg drop-shadow-xl dark:bg-gray-800 dark:border-gray-700">
+                <div class="flex items-center">
+                    <svg class="w-10 h-10 text-mentifyTheme" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"></path>
+                    </svg>
+                    <h5 class="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Interactive Live Session with Expert</h5>
+                </div>
+                <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">Kamu berkesempatan langsung untuk berinteraksi dengan Expert dalam meningkatkan skill dan knowledge kamu.    </p>
             </div>
         </div>
     </section>
@@ -262,33 +266,23 @@
                 <div class="duration-700 ease-in-out absolute inset-0 transition-transform transform translate-x-0 z-20" data-carousel-item="">
                     <img src="/carousel-3.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                 </div>
-                <!-- Item 4 -->
-                <div class="duration-700 ease-in-out absolute inset-0 transition-transform transform z-10 translate-x-full" data-carousel-item="">
-                    <img src="/carousel-4.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-                </div>
-                <!-- Item 5 -->
-                <div class="duration-700 ease-in-out absolute inset-0 transition-transform transform -translate-x-full z-10 hidden" data-carousel-item="">
-                    <img src="/carousel-5.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-                </div>
             </div>
             <!-- Slider indicators -->
             <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
                 <button type="button" class="w-3 h-3 rounded-full bg-white/50 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800" aria-current="false" aria-label="Slide 1" data-carousel-slide-to="0"></button>
                 <button type="button" class="w-3 h-3 rounded-full bg-white/50 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
                 <button type="button" class="w-3 h-3 rounded-full bg-white/50 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
-                <button type="button" class="w-3 h-3 rounded-full bg-white/50 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
-                <button type="button" class="w-3 h-3 rounded-full bg-white/50 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
             </div>
             <!-- Slider controls -->
             <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev="">
-                <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                    <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-mentifyOrange dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                    <svg aria-hidden="true" class="w-5 h-5 text-black sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
                     <span class="sr-only">Previous</span>
                 </span>
             </button>
             <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next="">
-                <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                    <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-mentifyOrange dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                    <svg aria-hidden="true" class="w-5 h-5 text-black sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                     <span class="sr-only">Next</span>
                 </span>
             </button>
@@ -299,49 +293,63 @@
         <div class="bg-mentifyTheme rounded-lg w-full">
             <div class="flex flex-row justify-between items-center w-full">
                 <div class="w-1/2">
-                    <img class="h-auto max-w-full" src="/image-1@2x.jpg" alt="image description">
+                    <img class="h-auto max-w-full" src="/image-2@1x.jpg" alt="image description">
                 </div>
-                <div class="w-1/2">
-                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Online Workshop</h5>
-                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Pelajari UX Writing dan kembangkan skillmu agar bisa membuat desain dengan copy yang mudah dimengerti.  Pada kelas UX Writing ini kamu akan belajar mengenai UX Writing lebih dalam dimulai dari fundamental hingga praktik di dunia kerja</p>
-                    <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-black bg-mentifyOrange rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                        PIlihan Workshop
+                <div class="w-1/2 p-8">
+                    <h5 class="mb-2 text-3xl font-light tracking-tight text-white dark:text-white">
+                        Cari Kelasmu Di Mentify & <br>
+                        Jadi Mentee berikutnya
+                    </h5>
+                    <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-black bg-mentifyOrange rounded-lg focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        Cari Kelas
+                        <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                     </a>
                 </div>
             </div>
         </div>
-        <div class="md:flex md:justify-between">
-            <!-- <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3"> -->
-                <div>
-                    <a href="#" class="flex items-center">
-                        <img src="/mentify_logo.png" class="h-6 mr-3 sm:h-9" alt="Mentify Logo" />
-                    </a>
-                    <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="https://flowbite.com/" class="hover:underline">Flowbite™</a>. All Rights Reserved.
-                    </span>
-                </div>
-                <div>
-                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
+        <div class="md:flex md:justify-between my-8">
+            <div>
+                <a href="#" class="flex items-center">
+                    <img src="/mentify_logo.png" class="h-8 mx-auto" alt="Mentify Logo" />
+                </a>
+                <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 All Rights Reserved.
+                </span>
+            </div>
+            <div>
+                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Sitemap</h2>
                     <ul class="text-gray-600 dark:text-gray-400">
                         <li class="mb-4">
-                            <a href="https://flowbite.com/" class="hover:underline">Flowbite</a>
+                            <a href="#" class="hover:underline">Bootcamp</a>
                         </li>
-                        <li>
-                            <a href="https://tailwindcss.com/" class="hover:underline">Tailwind CSS</a>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Mentify Lite</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Karya Alumni</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Kelas Saya</a>
                         </li>
                     </ul>
-                </div>
-                <div>
-                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us</h2>
+            </div>
+            <div>
+                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">About</h2>
                     <ul class="text-gray-600 dark:text-gray-400">
                         <li class="mb-4">
-                            <a href="https://github.com/themesberg/flowbite" class="hover:underline ">Github</a>
+                            <a href="#" class="hover:underline ">About Us</a>
                         </li>
-                        <li>
-                            <a href="https://discord.gg/4eeurUVvTy" class="hover:underline">Discord</a>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline ">Our Team</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline ">Contact Us</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline ">FAQ</a>
                         </li>
                     </ul>
-                </div>
-                <div>
+            </div>
+            <div class="mr-0">
                     <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Get In Touch</h2>
                     <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
                         <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
@@ -353,8 +361,7 @@
                             <span class="sr-only">Instagram page</span>
                         </a>
                     </div>
-                </div>
-            <!-- </div> -->
+            </div>
         </div>
     </section>
 
@@ -368,6 +375,23 @@
 import axios from 'axios'
 
 export default {
+    data() {
+        return {
+            webinarData : [],
+            commentData: [],
+            searchCategory: '',
+            searchTimeout: false
+        }
+    },  
+    watch: {
+        'searchCategory'(value) {
+            if(this.searchTimeout) {
+                clearTimeout(this.searchTimeout)
+            }
+            var vm = this;
+            vm.searchTimeout = setTimeout(function(){vm.searchByString(value)},1000)
+        }
+    },
     mounted() {
         this.getComment();
         this.getWebinar();
@@ -382,6 +406,21 @@ export default {
         getWebinar() {
             axios.get('/get-webinar')
                 .then((res) => {
+                    this.webinarData = res.data
+                    console.log(res)
+                })
+        },
+        getCategory(value) {
+            axios.get('/search-category-webinar',{params:{category:value}})
+                .then((res) => {
+                    this.webinarData = res.data
+                    console.log(res)
+                })
+        },
+        searchByString(value) {
+            axios.get('/search-webinar',{params:{string:value}})
+                .then((res) => {
+                    this.webinarData = res.data
                     console.log(res)
                 })
         }
