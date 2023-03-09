@@ -97,7 +97,7 @@
     </nav>
     <nav class="bg-white border-b-gray border-b-2 drop-shadow-md">
         <div class="max-w-screen-xl px-4 py-3 mx-auto md:px-6 h-24">
-            <div class="flex justify-around items-center h-full">
+            <div class="flex justify-around items-center h-full overflow-x-auto gap-2">
                 <button type="button" class="text-gray-400 bg-gray-50 focus:outline-none hover:bg-mentifyTheme hover:border-mentifyTheme-200 hover:text-white focus:ring-4 focus:ring-gray-200 font-large rounded-lg text-sm px-16 py-3.5">Mentify Bootcamp</button>
     
                 <button type="button" class="text-gray-400 bg-gray-50 focus:outline-none hover:bg-mentifyTheme hover:border-mentifyTheme-200 hover:text-white focus:ring-4 focus:ring-gray-200 font-large rounded-lg text-sm px-16 py-3.5">Mentify Life</button>
@@ -110,29 +110,26 @@
         </div>
     </nav>
 </div>   
-<div class="container mx-auto overflow-y-auto mt-56 px-36 space-y-28">
-    <section class="flex flex-row justify-between items-center w-full">
-        <div class="w-2/5">
+<div class="2xl:container mx-auto overflow-y-auto mt-56 2xl:px-28 lg:px-16 md:px-8 md:space-y-28 space-y-10">
+    <section class="flex md:flex-row flex-col justify-between items-center w-full">
+        <div class="md:w-2/5 md:order-1 order-2 text-center md:text-left">
             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Online Workshop</h5>
             <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Pelajari UX Writing dan kembangkan skillmu agar bisa membuat desain dengan copy yang mudah dimengerti.  Pada kelas UX Writing ini kamu akan belajar mengenai UX Writing lebih dalam dimulai dari fundamental hingga praktik di dunia kerja</p>
             <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-black bg-mentifyOrange rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                 PIlihan Workshop
             </a>
         </div>
-        <div class="w-3/5">
+        <div class="md:w-3/5 md:order-2 order-1 px-2 md:px-0">
             <img class="h-auto max-w-full" src="/image-2@1x.jpg" alt="image description">
         </div>
     </section>
     <section class="space-y-8">
         <div class="flex justify-around items-center">
-            <div class="w-1/2">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Online Workshop</h5>
-                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Pelajari UX Writing dan kembangkan skillmu agar bisa membuat desain dengan copy yang mudah dimengerti.  Pada kelas UX Writing ini kamu akan belajar mengenai UX Writing lebih dalam dimulai dari fundamental hingga praktik di dunia kerja</p>
-                <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-black bg-mentifyOrange rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                    PIlihan Workshop
-                </a>
+            <div class="lg:w-1/2 w-full px-4 lg:px-0 text-center lg:text-left">
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Berbagai Pilihan Workshop</h5>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Kami menyediakan berbagai pilihan workshop, kamu dapat memilih sesuai dengan keinginan kamu untuk mendalami ataupun mempelajari mengenai UX dan product design sesuai keinginan dan kebutuhan kamu. </p>
             </div>
-            <div class="w-1/2">
+            <div class="lg:w-1/2 md:block hidden">
                 <form class="flex flex-row-reverse">   
                     <label for="voice-search" class="sr-only">Search</label>
                     <div class="relative w-96">
@@ -144,8 +141,19 @@
                 </form>
             </div>
         </div>
-        <div class="p-2 text-sm text-red-800 rounded-full bg-mentifyNotify max-w-max" role="alert">
+        <div class="p-2 text-sm text-red-800 rounded-full bg-mentifyNotify max-w-max text-center lg:text-left mx-4 lg:mx-0" role="alert">
             Hai Evan, saat ini kamu memiliki kuota untuk  <span class="font-medium">mengikuti 1 workshop secara gratis </span>dari daftar workshop berikut 
+        </div>
+        <div class="block md:hidden mx-4">
+                <form class="flex flex-row-reverse">   
+                    <label for="voice-search" class="sr-only">Search</label>
+                    <div class="relative w-full">
+                        <input type="text" v-model="searchCategory" id="voice-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search..." required>
+                        <button type="button" class="absolute inset-y-0 right-0 flex items-center pr-3">
+                            <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+                        </button>
+                    </div>
+            </form>
         </div>
         <div>
             <div class="flex items-center h-full space-x-2">
@@ -154,8 +162,8 @@
                 </button>
             </div>
         </div>
-        <div class="grid grid-cols-3 gap-4">
-            <div v-for="(item, index) in webinarData" class="relative max-w-md bg-white border border-gray-200 rounded-lg drop-shadow-xl dark:bg-gray-800 dark:border-gray-70">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div v-for="(item, index) in webinarData" class="mx-4 md:mx-0 bg-white border border-gray-200 rounded-lg drop-shadow-xl dark:bg-gray-800 dark:border-gray-70">
                 <div class="bg-mentifyTheme rounded-tl-lg rounded-tr-lg" :style="index % 2 == 0 ? '' : 'background-image: url(/profile-picture-5.jpg)'">
                     <div class="px-4 pt-4 pb-10 space-y-4">
                         <img src="/mentify_logo.png" class="h-8" alt="Mentify Logo" />
@@ -206,11 +214,11 @@
         </div>
     </section>
     <section class="flex flex-col">
-        <div class="w-1/2 text-center mx-auto">
+        <div class="lg:w-1/2 w-full text-center mx-auto">
             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">4 Keuntungan dari Workshop Mentify</h5>
             <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Workshop di mentify menawarkan berbagai keuntungan dibanding platform belajar lain, berikut beberapa keuntungan yang akan kamu dapatkan</p>
         </div>    
-        <div class="grid grid-cols-4 gap-4">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 px-4 md:px-0">
             <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg drop-shadow-xl dark:bg-gray-800 dark:border-gray-700">
                 <div class="flex items-center">
                     <svg class="w-10 h-10 text-mentifyTheme" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
